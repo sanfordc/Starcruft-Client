@@ -12,8 +12,8 @@ class BattleView extends Sprite
 	{
 		super();
 		
-		graphics.beginFill(0x4488FF);
-		graphics.moveTo(10, 10);
+//		graphics.beginFill(0x4488FF);
+	//	graphics.moveTo(10, 10);
 		graphics.lineTo(110, 10);
 		graphics.lineTo(110, 110);
 		graphics.lineTo(10, 110);

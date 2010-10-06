@@ -6,7 +6,9 @@
   <frame>
     <library>
       <clip id="Sharepoint__" />
-      <bitmap id="RedShip" name="RedShip" import="assets\red_ship.png" size="7852" modified="10/3/2010 1:41:41 AM" />
+      <bitmap id="RedShip" name="RedShip" import="assets\red_ship.png" size="15177" modified="10/6/2010 3:19:44 AM" />
+      <clip id="GreenShip" name="GreenShip" import="assets\green_ship.png" size="15200" modified="10/6/2010 3:20:10 AM" />
+      <clip id="BlueShip" name="BlueShip" import="assets\blue_ship.png" size="15200" modified="10/6/2010 3:20:48 AM" />
     </library>
   </frame>
 </movie>

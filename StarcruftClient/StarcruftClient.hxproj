@@ -34,6 +34,8 @@
   <!-- Assets to embed into the output SWF -->
   <library>
     <asset path="assets\red_ship.png" bitmap="True" id="RedShip" />
+    <asset path="assets\green_ship.png" bitmap="False" id="GreenShip" />
+    <asset path="assets\blue_ship.png" bitmap="False" id="BlueShip" />
   </library>
   <!-- Paths to exclude from the Project Explorer tree -->
   <hiddenPaths>

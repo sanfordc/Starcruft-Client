@@ -31,10 +31,7 @@ class Client extends Sprite
 		
 		_ship_one = new Ship();
 		
-		_ship_one.setLocation(new Vector2d(400, 500));
-		_ship_one.setVelocity(new Vector2d( -30, -90));
-		_ship_one.setBearing(300);
-		_ship_one.setRotationSpeed(50);
+		_ship_one.set_location(new Vector2d(Constants.BATTLEFIELD_WIDTH / 2, Constants.BATTLEFIELD_HEIGHT / 2));
 		
 		_battlefield.addSpaceObject(_ship_one);
 		
@@ -67,8 +64,9 @@ class Client extends Sprite
 				case 68: //d
 					_ship_one.engageRightJet();
 				default:
-					trace("Key down: " + key_code);
+					// trace("Key down: " + key_code);
 			}
+			// _ship_one.trace();
 		}
 	}
 	
@@ -92,7 +90,7 @@ class Client extends Sprite
 				case 68: //d
 					_ship_one.disengageRightJet();
 				default:
-					trace("Key up: " + key_code);
+					// trace("Key up: " + key_code);
 			}
 		}
 	}

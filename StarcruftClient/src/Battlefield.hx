@@ -41,8 +41,8 @@ class Battlefield extends Sprite
 		graphics.endFill();
 		
 		var NUM_STARS = 30;
-		var MIN_STAR_RADIUS = 2;
-		var MAX_STAR_RADIUS = 4;
+		var MIN_STAR_RADIUS = 1;
+		var MAX_STAR_RADIUS = 2;
 		
 		var i_star : UInt;
 		
@@ -56,10 +56,9 @@ class Battlefield extends Sprite
 			y = Math.random() * _height;
 			radius = Math.random() * (MAX_STAR_RADIUS - MIN_STAR_RADIUS) + MIN_STAR_RADIUS;
 			
-			graphics.beginFill(0xAAAA55);
+			graphics.beginFill(0xAAAAAA);
 			graphics.drawCircle(x, y, radius);
 			graphics.endFill();
 		}
-		
 	}
 }

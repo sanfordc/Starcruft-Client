@@ -10,13 +10,18 @@ import flash.display.PixelSnapping;
  */
 
 class RedShip extends BitmapData {public function new(){super(0,0);}}
+class BlueShip extends BitmapData {public function new(){super(0,0);}}
+class GreenShip extends BitmapData {public function new(){super(0,0);}}
 
 class Ship extends SpaceObject
 {
-	static var FORWARD_THRUSTER_POWER : Float = 100.0;
-	static var REVERSE_THRUSTER_POWER : Float = -100.0;
-	static var LEFT_JET_POWER         : Float = -100.0;
-	static var RIGHT_JET_POWER        : Float = 100.0;
+	static var FORWARD_THRUSTER_POWER : Float = 40.0;
+	static var REVERSE_THRUSTER_POWER : Float = -10.0;
+	static var LEFT_JET_POWER         : Float = -1;
+	static var RIGHT_JET_POWER        : Float = 1;
+	static var POWER_SCALE_FACTOR     : Float = 1/100.0;
+	static var ROTATION_VELOCITY_CAP  : Float = 1;
+	static var VELOCITY_CAP  : Float = 1;
 
 	public function new() 
 	{
@@ -39,42 +44,42 @@ class Ship extends SpaceObject
 	
 	public function engageForwardThruster() : Void
 	{
-		setForwardAcceleration(getForwardAcceleration() + FORWARD_THRUSTER_POWER);
+		_forward_thrust += FORWARD_THRUSTER_POWER * POWER_SCALE_FACTOR;
 	}
 	
 	public function disengageForwardThruster() : Void
 	{
-		setForwardAcceleration(getForwardAcceleration() - FORWARD_THRUSTER_POWER);
+		_forward_thrust -= FORWARD_THRUSTER_POWER * POWER_SCALE_FACTOR;
 	}
 	
 	public function engageReverseThruster() : Void
 	{
-		setForwardAcceleration(getForwardAcceleration() + REVERSE_THRUSTER_POWER);
+		_forward_thrust += REVERSE_THRUSTER_POWER * POWER_SCALE_FACTOR;
 	}
 	
 	public function disengageReverseThruster() : Void
 	{
-		setForwardAcceleration(getForwardAcceleration() - REVERSE_THRUSTER_POWER);
+		_forward_thrust -= REVERSE_THRUSTER_POWER * POWER_SCALE_FACTOR;
 	}
 	
 	public function engageLeftJet() : Void
 	{
-		setRotationAcceleration(getRotationAcceleration() + LEFT_JET_POWER);
+		_angular_thrust += LEFT_JET_POWER * POWER_SCALE_FACTOR;
 	}
 	
 	public function disengageLeftJet() : Void
 	{
-		setRotationAcceleration(getRotationAcceleration() - LEFT_JET_POWER);
+		_angular_thrust -= LEFT_JET_POWER * POWER_SCALE_FACTOR;
 	}
 	
 	public function engageRightJet() : Void
 	{
-		setRotationAcceleration(getRotationAcceleration() + RIGHT_JET_POWER);
+		_angular_thrust += RIGHT_JET_POWER * POWER_SCALE_FACTOR;
 	}
 	
 	public function disengageRightJet() : Void
 	{
-		setRotationAcceleration(getRotationAcceleration() - RIGHT_JET_POWER);
+		_angular_thrust -= RIGHT_JET_POWER * POWER_SCALE_FACTOR;
 	}
 	
 	public function engageCannon() : Void
