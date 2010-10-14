@@ -30,13 +30,20 @@ class Battlefield extends Sprite
 	public function addSpaceObject(object : SpaceObject) : Void
 	{
 		_space_objects.push(object);
-		
 		addChild(object);
 	}
 	
+	public function removeSpaceObject(object : SpaceObject) : Void
+	{
+		_space_objects.remove (object);
+		removeChild (object);
+	}
+	
+	
 	private function draw() : Void
 	{
-		graphics.beginFill(0x000000);
+  		graphics.beginFill(0x000000);
+//		graphics.beginFill(0xffffff);
 		graphics.drawRect(0, 0, _width, _height);
 		graphics.endFill();
 		

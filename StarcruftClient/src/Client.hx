@@ -29,11 +29,9 @@ class Client extends Sprite
 		
 		addChild(_battlefield);
 		
-		_ship_one = new Ship();
+		_ship_one = new Ship(_battlefield);
 		
 		_ship_one.set_location(new Vector2d(Constants.BATTLEFIELD_WIDTH / 2, Constants.BATTLEFIELD_HEIGHT / 2));
-		
-		_battlefield.addSpaceObject(_ship_one);
 		
 		stage.addEventListener(Event.ENTER_FRAME,      onEnterFrame);
 		stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
@@ -61,8 +59,10 @@ class Client extends Sprite
 					_ship_one.engageLeftJet();
 				case 83: // s
 					_ship_one.engageReverseThruster();
-				case 68: //d
+				case 68: // d
 					_ship_one.engageRightJet();
+				case 32: // space
+					_ship_one.engageCannon();
 				default:
 					// trace("Key down: " + key_code);
 			}
@@ -89,6 +89,8 @@ class Client extends Sprite
 					_ship_one.disengageReverseThruster();
 				case 68: //d
 					_ship_one.disengageRightJet();
+				case 32: // space
+					_ship_one.disengageCannon();
 				default:
 					// trace("Key up: " + key_code);
 			}

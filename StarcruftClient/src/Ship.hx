@@ -23,9 +23,9 @@ class Ship extends SpaceObject
 	static var ROTATION_VELOCITY_CAP  : Float = 1;
 	static var VELOCITY_CAP  : Float = 1;
 
-	public function new() 
+	public function new(field : Battlefield, parent : SpaceObject = null) 
 	{
-		super();
+		super (field, parent);
 		
 		var red_ship_bitmap_data : BitmapData;
 		
@@ -33,11 +33,11 @@ class Ship extends SpaceObject
 		
 		var red_ship_bitmap : Bitmap = new Bitmap(red_ship_bitmap_data, PixelSnapping.AUTO, false);
 		
-		red_ship_bitmap.x = -30;
-		red_ship_bitmap.y = -30;
-		
 		red_ship_bitmap.scaleX = 0.5;
 		red_ship_bitmap.scaleY = 0.5;
+		red_ship_bitmap.x = -red_ship_bitmap.width/2 ;
+		red_ship_bitmap.y = -red_ship_bitmap.height/2 ;
+			
 		
 		addChild(red_ship_bitmap);
 	}
@@ -84,7 +84,7 @@ class Ship extends SpaceObject
 	
 	public function engageCannon() : Void
 	{
-		
+		var projectile = new Projectile (_battlefield, this);
 	}
 	
 	public function disengageCannon() : Void

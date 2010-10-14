@@ -9,9 +9,10 @@ import haxe.Timer;
 
 class SpaceObject extends Sprite
 {
+	private var _parent 								: SpaceObject;
 	private var _mass (default, default) 			    : Float;
 	private var _location (get_location, set_location)  : Vector2d;
-	private var _velocity (default, default)            : Vector2d;
+	private var _velocity (get_velocity, set_velocity)            : Vector2d;
 	private var _acceleration (default, default)        : Vector2d;
 
 	private var _moment_of_inertia (default, default)   : Float;
@@ -30,14 +31,21 @@ class SpaceObject extends Sprite
 	public function set_forward_thrust (ft : Float) : Float { _forward_thrust = ft; return ft;  }
 	public function get_location () : Vector2d { return _location; }
 	public function set_location (l : Vector2d) : Vector2d { _location = l;  return _location; }
+	public function get_velocity () : Vector2d { return _velocity; }
+	public function set_velocity (v : Vector2d) : Vector2d { _velocity = v;  return _velocity; }
 	public function get_bearing () : Vector2d { return _bearing; }
 	public function set_bearing (b : Vector2d) : Vector2d { _bearing = b;  return _bearing; }
 	public function get_max_speed () : Float { return 5;}
 	public function get_max_angular_velocity () : Float { return 0.1;}
 	
-	public function new() 
+	var _battlefield : Battlefield;
+
+	public function new(field : Battlefield, parent : SpaceObject = null ) 
 	{
 		super();
+		_parent = parent;
+		_battlefield = field;
+		_battlefield.addSpaceObject(this);
 		
 		_mass = 1;
 		_location  = new Vector2d (0, 0);            
