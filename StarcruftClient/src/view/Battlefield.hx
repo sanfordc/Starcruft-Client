@@ -1,4 +1,4 @@
-package model;
+package view;
 import flash.display.Sprite;
 import flash.Lib;
 

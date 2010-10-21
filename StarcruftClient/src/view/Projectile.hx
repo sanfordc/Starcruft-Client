@@ -1,7 +1,9 @@
-package model;
+package view;
+import model.Vector2d;
 import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.display.PixelSnapping;
+import flash.display.Sprite;
 /**
  * ...
  * @author Chris
@@ -32,14 +34,14 @@ class Projectile extends SpaceObject
 		bitmap.x = -2; // HACK: Offset a bit to get in the middle of ship 'cannon'
 //		bitmap.y = -30;
 
-		_location = parent.get_location().clone();
-		_bearing = parent.get_bearing().clone();
+		_physical_object._location = parent._physical_object._location.clone();
+		_physical_object._bearing = parent._physical_object._bearing.clone();
 		addChild(bitmap);
-		var par_vel : Vector2d = parent.get_bearing().clone();
+		var par_vel : Vector2d = parent._physical_object._bearing.clone();
 		par_vel = par_vel.multiply (SPEED);
-		// _velocity = _velocity.add (parent.get_bearing().multiply (SPEED));
-		_velocity = _velocity.add (parent.get_velocity());
-		_velocity = _velocity.add (par_vel);
+		// _velocity = _velocity.add (parent._bearing.multiply (SPEED));
+		_physical_object._velocity = _physical_object._velocity.add (parent._physical_object._velocity);
+		_physical_object._velocity = _physical_object._velocity.add (par_vel);
 //		trace ("Fired!");
 //		trace ();
 	}

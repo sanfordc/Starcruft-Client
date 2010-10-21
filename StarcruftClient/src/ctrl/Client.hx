@@ -3,8 +3,8 @@ import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.KeyboardEvent;
 import flash.Lib;
-import model.Battlefield;
-import model.Ship;
+import view.Battlefield;
+import view.Ship;
 import model.Vector2d;
 import view.Constants;
 
@@ -35,7 +35,7 @@ class Client extends Sprite
 		
 		_ship_one = new Ship(_battlefield);
 		
-		_ship_one.set_location(new Vector2d(Constants.BATTLEFIELD_WIDTH / 2, Constants.BATTLEFIELD_HEIGHT / 2));
+		// _ship_one.set_location(new Vector2d(Constants.BATTLEFIELD_WIDTH / 2, Constants.BATTLEFIELD_HEIGHT / 2));
 		
 		stage.addEventListener(Event.ENTER_FRAME,      onEnterFrame);
 		stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
