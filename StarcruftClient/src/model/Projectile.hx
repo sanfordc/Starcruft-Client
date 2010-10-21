@@ -1,4 +1,4 @@
-package ;
+package model;
 import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.display.PixelSnapping;

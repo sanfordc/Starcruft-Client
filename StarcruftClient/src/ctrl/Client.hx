@@ -1,8 +1,12 @@
-package ;
+package ctrl;
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.KeyboardEvent;
 import flash.Lib;
+import model.Battlefield;
+import model.Ship;
+import model.Vector2d;
+import view.Constants;
 
 /**
  * ...

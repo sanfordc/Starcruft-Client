@@ -1,6 +1,7 @@
-package ;
+package model;
 import flash.display.Sprite;
 import haxe.Timer;
+import view.Constants;
 
 /**
  * ...
