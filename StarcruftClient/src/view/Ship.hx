@@ -41,47 +41,47 @@ class Ship extends SpaceObject
 		red_ship_bitmap.x = -red_ship_bitmap.width/2 ;
 		red_ship_bitmap.y = -red_ship_bitmap.height/2 ;
 		
-		addChild(red_ship_bitmap);
+		_sprite.addChild(red_ship_bitmap);
 	}
 	
 	public function engageForwardThruster() : Void
 	{
-		_physical_object._forward_thrust += FORWARD_THRUSTER_POWER * POWER_SCALE_FACTOR;
+		_forward_thrust += FORWARD_THRUSTER_POWER * POWER_SCALE_FACTOR;
 	}
 	
 	public function disengageForwardThruster() : Void
 	{
-		_physical_object._forward_thrust -= FORWARD_THRUSTER_POWER * POWER_SCALE_FACTOR;
+		_forward_thrust -= FORWARD_THRUSTER_POWER * POWER_SCALE_FACTOR;
 	}
 	
 	public function engageReverseThruster() : Void
 	{
-		_physical_object._forward_thrust += REVERSE_THRUSTER_POWER * POWER_SCALE_FACTOR;
+		_forward_thrust += REVERSE_THRUSTER_POWER * POWER_SCALE_FACTOR;
 	}
 	
 	public function disengageReverseThruster() : Void
 	{
-		_physical_object._forward_thrust -= REVERSE_THRUSTER_POWER * POWER_SCALE_FACTOR;
+		_forward_thrust -= REVERSE_THRUSTER_POWER * POWER_SCALE_FACTOR;
 	}
 	
 	public function engageLeftJet() : Void
 	{
-		_physical_object._angular_thrust += LEFT_JET_POWER * POWER_SCALE_FACTOR;
+		_angular_thrust += LEFT_JET_POWER * POWER_SCALE_FACTOR;
 	}
 	
 	public function disengageLeftJet() : Void
 	{
-		_physical_object._angular_thrust -= LEFT_JET_POWER * POWER_SCALE_FACTOR;
+		_angular_thrust -= LEFT_JET_POWER * POWER_SCALE_FACTOR;
 	}
 	
 	public function engageRightJet() : Void
 	{
-		_physical_object._angular_thrust += RIGHT_JET_POWER * POWER_SCALE_FACTOR;
+		_angular_thrust += RIGHT_JET_POWER * POWER_SCALE_FACTOR;
 	}
 	
 	public function disengageRightJet() : Void
 	{
-		_physical_object._angular_thrust -= RIGHT_JET_POWER * POWER_SCALE_FACTOR;
+		_angular_thrust -= RIGHT_JET_POWER * POWER_SCALE_FACTOR;
 	}
 	
 	public function engageCannon() : Void

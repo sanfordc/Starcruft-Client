@@ -35,7 +35,7 @@ class Client extends Sprite
 		
 		_ship_one = new Ship(_battlefield);
 		
-		// _ship_one.set_location(new Vector2d(Constants.BATTLEFIELD_WIDTH / 2, Constants.BATTLEFIELD_HEIGHT / 2));
+		_ship_one._location = (new Vector2d(Constants.BATTLEFIELD_WIDTH / 2, Constants.BATTLEFIELD_HEIGHT / 2));
 		
 		stage.addEventListener(Event.ENTER_FRAME,      onEnterFrame);
 		stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);

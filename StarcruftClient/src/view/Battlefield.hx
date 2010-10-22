@@ -14,8 +14,8 @@ class Battlefield extends Sprite
 	var _height : Float;
 
 	var _space_objects : Array<SpaceObject>;
-	
 	public function new(width : Float, height : Float) 
+	
 	{
 		super();
 		
@@ -30,13 +30,13 @@ class Battlefield extends Sprite
 	public function addSpaceObject(object : SpaceObject) : Void
 	{
 		_space_objects.push(object);
-		addChild(object);
+		addChild(object._sprite);
 	}
 	
 	public function removeSpaceObject(object : SpaceObject) : Void
 	{
 		_space_objects.remove (object);
-		removeChild (object);
+		removeChild (object._sprite);
 	}
 	
 	

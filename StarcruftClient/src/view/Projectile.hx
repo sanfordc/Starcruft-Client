@@ -34,14 +34,14 @@ class Projectile extends SpaceObject
 		bitmap.x = -2; // HACK: Offset a bit to get in the middle of ship 'cannon'
 //		bitmap.y = -30;
 
-		_physical_object._location = parent._physical_object._location.clone();
-		_physical_object._bearing = parent._physical_object._bearing.clone();
-		addChild(bitmap);
-		var par_vel : Vector2d = parent._physical_object._bearing.clone();
+		_location = parent._location.clone();
+		_bearing = parent._bearing.clone();
+		_sprite.addChild(bitmap);
+		var par_vel : Vector2d = parent._bearing.clone();
 		par_vel = par_vel.multiply (SPEED);
 		// _velocity = _velocity.add (parent._bearing.multiply (SPEED));
-		_physical_object._velocity = _physical_object._velocity.add (parent._physical_object._velocity);
-		_physical_object._velocity = _physical_object._velocity.add (par_vel);
+		_velocity = _velocity.add (parent._velocity);
+		_velocity = _velocity.add (par_vel);
 //		trace ("Fired!");
 //		trace ();
 	}
